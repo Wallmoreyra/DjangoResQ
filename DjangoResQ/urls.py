@@ -16,7 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from core import views
 
 urlpatterns = [
+    path('', views.landing, name="landing"),
     path('admin/', admin.site.urls),
+    path('regform', views.regform, name="regform"),
+    path('pgini', views.pgini, name="pgini"),
+    path('pgaccess', views.pgaccess, name="pgaccess"),
+    path('aniform', views.aniform, name="aniform"),
+    path('anidet', views.anidet, name="anidet"),
+    path('anicata', views.anicata, name="anicata"),
 ]

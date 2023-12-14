@@ -1,0 +1,77 @@
+{% extends 'inserts/base.html' %}
+
+{% load static %}
+
+{% block title %} Galeria {% endblock %}
+
+{% block content %}
+
+    <h1>Animales en adopción</h1>
+    <p>
+        Cada día, miles de animales inocentes esperan en refugios, ansiosos por encontrar un hogar cálido y amoroso. Al adoptar uno de estos animales, puedes hacer una diferencia real en sus vidas y en la tuya.
+        </br>
+        Estos animales se encuentran necesitados de un hogar:
+    </p>
+    <div id="botonesPagNav01">
+        <button  class="botonActualizar">Actualizar</button>
+        <button  class="mostrarGatos">Gatos</button>
+        <button  class="mostrarPerros">Perros</button>
+        <button  class="mostrarOtros">Otros</button>
+    </div>
+    <div id="botonCerrar">
+        <button  class="mostrarOtros" onclick="cerrar()">Cerrar</button>
+    </div>
+
+    <div class="contenedor" id="cardConteiner">
+        <!-- <div class="card">
+            <h3>Nombre0</h3>
+            <a href="../pg-DetAnim/aniDet.html">
+                <img src="" alt="imgAni00">
+            </a>
+            <div class="racAge">
+                <p>Raza</p>
+                <p>Edad</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Nombre1</h3>
+            <a href="">
+                <img src="" alt="imgAni01">
+            </a>
+            <div class="racAge">
+                <p>Raza</p>
+                <p>Edad</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Nombre2</h3>
+            <a href="">
+                <img src="" alt="imgAni02">
+            </a>
+            <div class="racAge">
+                <p>Raza</p>
+                <p>Edad</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Nombre3</h3>
+            <a href="">
+                <img src="" alt="imgAni03">
+            </a>
+            <div class="racAge">
+                <p>Raza</p>
+                <p>Edad</p>
+            </div>
+        </div> -->
+    </div>
+    <div id="botonesPagNav">
+        <button class="pagina-anterior">Anterior</button><button class="pagina-siguiente">Siguiente</button>
+    </div>
+    <iframe class="iframeDetalle" id="iframeContenedor" width="100%" height="800" src="" frameborder="0"></iframe>
+    
+    <script src="{% static '/js/listaDeAnimales.js' %}"></script>
+
+    {% endblock %}  
