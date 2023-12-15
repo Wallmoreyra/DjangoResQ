@@ -17,6 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from core import views
+from core.views import register
+from core.views import lista_adoptantes
 
 urlpatterns = [
     path('', views.landing, name="landing"),
@@ -27,4 +29,6 @@ urlpatterns = [
     path('aniform', views.aniform, name="aniform"),
     path('anidet', views.anidet, name="anidet"),
     path('anicata', views.anicata, name="anicata"),
+    path('register', views.register, name='register'),
+    path('adopt', views.lista_adoptantes, name='lista_adoptantes'),
 ]

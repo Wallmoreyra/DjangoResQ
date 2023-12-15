@@ -15,6 +15,8 @@
 }
 
 body {
+    margin: 0;
+    padding: 0;
     scroll-behavior: smooth;
     background-color: #f3f3f3;
 }
@@ -129,7 +131,7 @@ footer {
     left: 0;
     width: 100%;
     height: 4vh;
-    /* position: fixed; */
+    position: bottom;
 }
 
 footer div {
@@ -662,12 +664,32 @@ footer div b {
 # Botones - Varios
 --------------------------------------------------------------*/
 #regContenedor {
-    height: 100%;
-    display: flex;
+    height: 82vh;
     flex-grow: 1;
+    display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    box-sizing: border-box;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.messages {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.success-message {
+    color: green;
+    font-weight: bold;
+}
+
+.error-message {
+    color: red;
+    font-weight: bold;
 }
 
 #regContenedor h1 {
@@ -726,8 +748,46 @@ footer div b {
 #regContenedor .enviar{
     margin-bottom: 1rem;
 }
-
 /* --------------------------------------------------------------
-# RegForm
-# Botones - Varios
+# adoptantes
+# Estilos
 --------------------------------------------------------------*/
+.main-container {
+    height: 82vh;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    box-sizing: border-box;
+    /* max-width: 400px; */
+    margin: 0 auto;
+}
+
+.adoptantes-page .tablaAdoptantes {
+    width: 80%;
+    margin-top: 20px;
+    overflow-x: auto; /* Agrega un desplazamiento horizontal si es necesario */
+}
+
+.adoptantes-page .table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.adoptantes-page .tablaTitulos td {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    padding: 8px;
+}
+
+.adoptantes-page .adoptantesTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.adoptantes-page .sinAdoptantes {
+    text-align: center;
+    margin-top: 20px;
+}

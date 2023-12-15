@@ -8,7 +8,25 @@
 <body class="registro">
     <div id="regContenedor">
         <h1>Registro de Usuario <br><br><br></h1>
-        <form action="" id="formRegistro" class="formulario">
+        {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}-message"{% endif %}>
+                {% if message.tags == 'error' %}
+                    <strong style="color: red;">{{ message }}</strong>
+                {% elif message.tags == 'success' %}
+                    <strong style="color: green;">{{ message }}</strong>
+                {% else %}
+                    {{ message }}
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+        {% endif %}
+
+        <!-- <form action="" id="formRegistro" class="formulario"> -->
+        <form action="{% url 'register' %}" method="post" id="formRegistro" class="formulario">
+            {% csrf_token %}
             <div>
                 <label for="userName">Nombre de Usuario</label>
                 <input class="cuadroIngreso" type="text" id="userName" name="userName" required>
@@ -51,7 +69,6 @@
         
     </div>
     <div class="partnerInf"></div>
-
     <script src="{% static 'js/validacion.js' %}"></script>
 </body>
 

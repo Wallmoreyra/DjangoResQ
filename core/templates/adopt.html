@@ -1,0 +1,41 @@
+{% extends 'inserts/base.html' %}
+{% load static %}
+
+{% block title %} Adoptantes Registrados {% endblock %}
+
+{% block content %}
+<main class="main-container">
+    <section class="sectionAdoptantes">
+        <h1 class="tituloSection">ADOPTANTES REGISTRADOS</h1>
+    </section>
+    {% if adoptantes %}
+        <div class="tablaAdoptantes">
+            <table class="table">
+                <thead class="tablaTitulos">
+                    <td>Nombre de Usuario</td>
+                    <td>Nombre</td>
+                    <td>Apellido</td>
+                    <td>DNI</td>
+                    <td>Email</td>
+                </thead>
+                {% for adoptante in adoptantes %}
+                    <tbody class="adoptantesTable">
+                        <tr>
+                            <td class="textoTabla">{{ adoptante.userName }}</td>
+                            <td class="textoTabla">{{ adoptante.name }}</td>
+                            <td class="textoTabla">{{ adoptante.lastName }}</td>
+                            <td class="textoTabla">{{ adoptante.DNI }}</td>
+                            <td class="textoTabla">{{ adoptante.email }}</td>
+                        </tr>
+                    </tbody>
+                {% endfor %}
+            </table>
+        </div>
+    {% else %}
+        <div class="sinAdoptantes">
+            <h3 class="text-center text-white">No hay registros</h3>
+        </div>
+    {% endif %}
+</main>
+<div class="partnerInf"></div>
+{% endblock %}
