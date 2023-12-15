@@ -1,0 +1,75 @@
+{% extends 'inserts/base.html' %}
+
+{% load static %}
+
+{% block title %} Registro {% endblock %}
+
+{% block content %}
+<body class="registro">
+    <div id="regContenedor">
+        <h1>Registro de Usuario <br><br><br></h1>
+        {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}-message"{% endif %}>
+                {% if message.tags == 'error' %}
+                    <strong style="color: red;">{{ message }}</strong>
+                {% elif message.tags == 'success' %}
+                    <strong style="color: green;">{{ message }}</strong>
+                {% else %}
+                    {{ message }}
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+        {% endif %}
+
+        <!-- <form action="" id="formRegistro" class="formulario"> -->
+        <form action="{% url 'register' %}" method="post" id="formRegistro" class="formulario">
+            {% csrf_token %}
+            <div>
+                <label for="userName">Nombre de Usuario</label>
+                <input class="cuadroIngreso" type="text" id="userName" name="userName" required>
+                <span class="error" id="userNameError"></span>
+            </div>
+            
+            <div>
+                <label for="password">Contraseña</label>
+                <input class="cuadroIngreso" type="password" id="password" name="password">
+                <span class="error" id="passwordError"></span>
+            </div>
+
+            <div>
+                <label for="name">Nombre</label>
+                <input class="cuadroIngreso" type="text" id="name" name="name">
+                <span class="error" id="nameError"></span>
+            </div>
+
+            <div>
+                <label for="lastName">Apellido</label>
+                <input class="cuadroIngreso" type="text" id="lastName" name="lastName">
+                <span class="error" id="lastNameError"></span>
+            </div>
+
+            <div>
+                <label for="DNI">DNI</label>
+                <input class="cuadroIngreso" type="text" id="DNI" name="DNI">
+                <span class="error" id="DNIError"></span>
+            </div>
+
+            <div>
+                <label for="email">Email</label>
+                <input class="cuadroIngreso" type="email" id="email" name="email">
+                <span class="error" id="emailError"></span>
+            </div>
+            
+            <input class="boton" type="reset" value="Borrar">
+            <input class="boton enviar" onclick="return enviarform()" type="submit" value="Enviar">
+        </form>
+        
+    </div>
+    <div class="partnerInf"></div>
+    <script src="{% static 'js/validacion.js' %}"></script>
+</body>
+
+    {% endblock %}

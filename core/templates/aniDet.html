@@ -1,0 +1,38 @@
+{% extends 'inserts/base.html' %}
+
+{% load static %}
+
+{% block title %} Detalles {% endblock %}
+
+{% block content %}
+
+    <div class="detAnim">
+        <button class="antImg">Anterior</button>
+        <div class="nameImg">
+            <h2 id="nombreAnimal">Nombre:</h2>
+            <img id="imagenAnimal-00" src="" alt="imgAni00">
+        </div>
+        <button class="sigImg">Siguiente</button>
+        <div class="nameDatos">
+            <p id="especieAnimal">Especie:</p>
+            <p id="razaAnimal">Raza:</p>
+            <p id="edadAnimal">Edad:</p>
+            <p id="generoAnimal">Genero:</p>
+            <p id="vacunasAnimal">Vacunas:</p>
+            <p id="EstirilizadoAnimal">Estirilizado: No</p>
+            <p id="localidadAnimal">Localidad:</p>
+        </div>
+        <div class="aniDescrip">
+            <p id="cuidadosEspeciales">
+                Cuidados especiales:
+            </p>
+            <p id="descripcionAnimal">
+                Descripción:
+            </p>
+        </div>
+        <!-- <button class="botonDeRetorno" onclick="redirigir()">Volver</button>
+        <button class="botonDeRetorno" onclick="cerrar()">x</button> -->
+    </div>
+    <script src="{% static '/js/detalle.js' %}"></script>
+
+    {% endblock %} 
